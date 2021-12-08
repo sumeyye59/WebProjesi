@@ -15,5 +15,10 @@ namespace KitapKesifleri.Models
         public Country Country { get; set; }
         public Gender Gender { get; set; }
     }
-    
+    public enum Gender
+    {
+        Woman = 1,
+        Man = 2
+
+    }
 }
