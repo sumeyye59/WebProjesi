@@ -9,6 +9,7 @@ namespace KitapKesifleri.Models
     {
         public int Id { get; set; }
         public string BookName { get; set; }
+        public int Isbn { get; set; }
         public int? FirstEdition { get; set; }
         public double? Point { get; set; }
         public int? Page { get; set; }

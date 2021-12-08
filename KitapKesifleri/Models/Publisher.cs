@@ -10,7 +10,7 @@ namespace KitapKesifleri.Models
         public int Id { get; set; }
         public string PublisherName { get; set; }
         public string Adress { get; set; }
-        
+        public string Tel { get; set; }
 
     }
 }
