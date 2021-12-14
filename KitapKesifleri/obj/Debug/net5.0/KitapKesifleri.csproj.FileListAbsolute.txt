@@ -164,3 +164,8 @@ C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\Razor\Views\Language\De
 C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\Razor\Views\Language\Details.cshtml.g.cs
 C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\Razor\Views\Language\Edit.cshtml.g.cs
 C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\Razor\Views\Language\Index.cshtml.g.cs
+C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\Razor\Views\Category\Create.cshtml.g.cs
+C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\Razor\Views\Category\Delete.cshtml.g.cs
+C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\Razor\Views\Category\Details.cshtml.g.cs
+C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\Razor\Views\Category\Edit.cshtml.g.cs
+C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs
