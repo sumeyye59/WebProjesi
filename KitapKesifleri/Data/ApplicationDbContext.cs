@@ -18,8 +18,10 @@ namespace KitapKesifleri.Data
         public DbSet<Language> Language { get; set; }
         public DbSet<Author> Author { get; set; }
         public DbSet<BookAuthor> BookAuthor  { get; set; }
+        public DbSet<BookTranslator> BookTranslator { get; set; }
         public DbSet<Country> Country { get; set; }
         public DbSet<Publisher> Publisher { get; set; }
         public DbSet<Translator> Translator { get; set; }
+        
     }
 }
