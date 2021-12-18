@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace KitapKesifleri.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211214104249_migsec")]
-    partial class migsec
+    [Migration("20211216112720_ilk")]
+    partial class ilk
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -69,7 +69,7 @@ namespace KitapKesifleri.Migrations
                     b.Property<int>("Edition")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("FirstEdition")
+                    b.Property<int?>("Firstdate")
                         .HasColumnType("integer");
 
                     b.Property<int>("Isbn")

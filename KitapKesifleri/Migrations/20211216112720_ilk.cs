@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace KitapKesifleri.Migrations
 {
-    public partial class firstmig : Migration
+    public partial class ilk : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -261,7 +261,8 @@ namespace KitapKesifleri.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     BookName = table.Column<string>(type: "text", nullable: true),
                     Isbn = table.Column<int>(type: "integer", nullable: false),
-                    FirstEdition = table.Column<int>(type: "integer", nullable: true),
+                    BookCover = table.Column<string>(type: "text", nullable: true),
+                    Firstdate = table.Column<int>(type: "integer", nullable: true),
                     Point = table.Column<double>(type: "double precision", nullable: true),
                     Page = table.Column<int>(type: "integer", nullable: true),
                     Summary = table.Column<string>(type: "text", nullable: true),

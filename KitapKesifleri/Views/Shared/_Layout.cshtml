@@ -52,8 +52,8 @@
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="index.html">
-                                    Home
+                                <a class="nav-link"asp-area="" asp-controller="ThisYear" asp-action="Index">
+                                   En Yeni
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
@@ -67,13 +67,19 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownAdmin" role="button" data-toggle="dropdown" aria-expanded="false">Admin</a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownAdmin">
-                                    <li ><a class="dropdown-item" asp-area="" asp-controller="Language" asp-action="Index">Diller</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Language" asp-action="Index">Diller</a></li>
                                     <li><a class="dropdown-item" asp-area="" asp-controller="Category" asp-action="Index">Kategoriler</a></li>
                                     <li><a class="dropdown-item" asp-area="" asp-controller="Publisher" asp-action="Index">Yayınevleri</a></li>
                                     <li><a class="dropdown-item" asp-area="" asp-controller="Book" asp-action="Index">Kitaplar</a></li>
+
                                     <li><a class="dropdown-item" asp-area="" asp-controller="Translator" asp-action="Index">Çevirmenler</a></li>
                                     <li><a class="dropdown-item" asp-area="" asp-controller="Author" asp-action="Index">Yazarlar</a></li>
-    @*<li><a class="dropdown-item" href="#">Ekleme2</a></li>*@
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Country" asp-action="Index">Ülkeler</a></li>
+
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="BookAuthor" asp-action="Index">Kitap ve Yazarlar</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="BookTranslator" asp-action="Index">Kitap ve Çevirmenler</a></li>
+
+                                    @*<li><a class="dropdown-item" href="#">Ekleme2</a></li>*@
                                 </ul>
                             </li>
                         </ul>

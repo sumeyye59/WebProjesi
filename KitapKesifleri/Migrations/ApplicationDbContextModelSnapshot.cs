@@ -67,7 +67,7 @@ namespace KitapKesifleri.Migrations
                     b.Property<int>("Edition")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("FirstEdition")
+                    b.Property<int?>("Firstdate")
                         .HasColumnType("integer");
 
                     b.Property<int>("Isbn")

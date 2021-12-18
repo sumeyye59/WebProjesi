@@ -7,9 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using KitapKesifleri.Data;
 using KitapKesifleri.Models;
-using System.IO;
 using Microsoft.AspNetCore.Hosting;
-
+using System.IO;
 
 namespace KitapKesifleri.Controllers
 {
@@ -17,7 +16,6 @@ namespace KitapKesifleri.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _hostingEnvironment;
-        
         public BookController(ApplicationDbContext context, IWebHostEnvironment hostingEnvironment)
         {
             _context = context;
@@ -55,9 +53,9 @@ namespace KitapKesifleri.Controllers
         // GET: Book/Create
         public IActionResult Create()
         {
-            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "CategoryName");
-            ViewData["LanguageId"] = new SelectList(_context.Language, "Id", "LanguageName");
-            ViewData["PublisherId"] = new SelectList(_context.Publisher, "Id", "PublisherName");
+            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Id");
+            ViewData["LanguageId"] = new SelectList(_context.Language, "Id", "Id");
+            ViewData["PublisherId"] = new SelectList(_context.Publisher, "Id", "Id");
             return View();
         }
 
@@ -66,18 +64,17 @@ namespace KitapKesifleri.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,BookName,Isbn,BookCover,FirstEdition,Point,Page,Summary,Edition,LanguageId,CategoryId,PublisherId")] Book book)
+        public async Task<IActionResult> Create([Bind("Id,BookName,Isbn,BookCover,Firstdate,Point,Page,Summary,Edition,LanguageId,CategoryId,PublisherId")] Book book)
         {
             if (ModelState.IsValid)
             {
-               
                 string webRootPath = _hostingEnvironment.WebRootPath;
                 var files = HttpContext.Request.Form.Files;
-               
+
                 string fileName = Guid.NewGuid().ToString();
                 var uploads = Path.Combine(webRootPath, @"img");
                 var extension = Path.GetExtension(files[0].FileName);
-                using (var fileStream = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create)) 
+                using (var fileStream = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
                 {
                     files[0].CopyTo(fileStream);
                 }
@@ -86,10 +83,10 @@ namespace KitapKesifleri.Controllers
                 _context.Add(book);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-                }
-                ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "CategoryName", book.CategoryId);
-            ViewData["LanguageId"] = new SelectList(_context.Language, "Id", "LanguageName", book.LanguageId);
-            ViewData["PublisherId"] = new SelectList(_context.Publisher, "Id", "PublisherName", book.PublisherId);
+            }
+            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Id", book.CategoryId);
+            ViewData["LanguageId"] = new SelectList(_context.Language, "Id", "Id", book.LanguageId);
+            ViewData["PublisherId"] = new SelectList(_context.Publisher, "Id", "Id", book.PublisherId);
             return View(book);
         }
 
@@ -117,7 +114,7 @@ namespace KitapKesifleri.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,BookName,Isbn,BookCover,FirstEdition,Point,Page,Summary,Edition,LanguageId,CategoryId,PublisherId")] Book book)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,BookName,Isbn,BookCover,Firstdate,Point,Page,Summary,Edition,LanguageId,CategoryId,PublisherId")] Book book)
         {
             if (id != book.Id)
             {

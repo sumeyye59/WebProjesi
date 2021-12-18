@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,7 +12,8 @@ namespace KitapKesifleri.Models
         public string BookName { get; set; }
         public int Isbn { get; set; }
         public string BookCover { get; set; }
-        public int? FirstEdition { get; set; }
+      
+        public int? Firstdate { get; set; }
         public double? Point { get; set; }
         public int? Page { get; set; }
         public string Summary { get; set; } 
