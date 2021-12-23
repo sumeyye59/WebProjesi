@@ -6,9 +6,11 @@
     <title>@ViewData["Title"] - KitapKesifleri</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <!-- Additional CSS Files -->
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="~/css/fontawesome.css">
-    <link rel="stylesheet" href="~/css/templatemo-sixteen.css">
+    <link rel="stylesheet" href="~/css/templatemo-sixteen.css" type="text/css">
     <link rel="stylesheet" href="~/css/owl.css">
 </head>
 <body>
@@ -60,10 +62,7 @@
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
-                            @*<li class="nav-item">
-            <a class="nav-link" href="products.html">Kitaplar</a>
-        </li>*@
-
+                         
                             <li class="nav-item">
                                 <a class="nav-link" href="contact.html">İletişim</a>
                             </li>
@@ -84,7 +83,7 @@
                                         <li><a class="dropdown-item" asp-area="" asp-controller="BookAuthor" asp-action="Index">Kitap ve Yazarlar</a></li>
                                         <li><a class="dropdown-item" asp-area="" asp-controller="BookTranslator" asp-action="Index">Kitap ve Çevirmenler</a></li>
 
-                                        @*<li><a class="dropdown-item" href="#">Ekleme2</a></li>*@
+                                       
                                     </ul>
                                 </li>
                             }
@@ -95,13 +94,12 @@
                 </div>
             </nav>
         </header>
-    <br /><br /><br /><br />
+    @*<br /><br /><br /><br />*@
         
             <div class="container">
                 <main role="main" class="pb-3">
                     @RenderBody()
-                </main>
-            </div>
+            </main></div>
         
     <footer class="border-top footer text-muted">
         <div class="container">
