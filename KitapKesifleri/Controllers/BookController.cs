@@ -28,26 +28,65 @@ namespace KitapKesifleri.Controllers
             var applicationDbContext = _context.Book.Include(b => b.Category).Include(b => b.Language).Include(b => b.Publisher);
             return View(await applicationDbContext.ToListAsync());
         }
-
-        // GET: Book/Details/5
-        public async Task<IActionResult> Details(int? id)
+        [HttpGet]
+        public PartialViewResult Yorumyap(int id)
         {
-            if (id == null)
+            ViewBag.deger = id;
+            return PartialView();
+        }
+        public IActionResult YorumYap()
+        {
+            ViewData["BookId"] = new SelectList(_context.Book, "Id", "Id");
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> YorumYap([Bind("Id,Name,Comment,BookId")] Comments c)
+        {
+            if (ModelState.IsValid)
             {
-                return NotFound();
+                _context.Add(c);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(AllBooks));
             }
+            ViewData["BookId"] = new SelectList(_context.Book, "Id", "Id", c.BookId);
+            
+            return View(c);
+            //_context.Comments.Add(c);
+            ////_context.SaveChanges();
+            //return PartialView();
+        }
+        // GET: Book
+        public async Task<IActionResult> AllBooks()
+        {
+            var applicationDbContext = _context.Book.Include(b => b.Category).Include(b => b.Language).Include(b => b.Publisher);
+            return View(await applicationDbContext.ToListAsync());
+        }
+        // GET: Book/Details/5
+        BookComment bc = new BookComment();
+        public IActionResult Details(int? id)
+        {
+            bc.Value1 = _context.Book.Where(x=>x.Id==id).ToList();
+            bc.Value2 = _context.Comments.Where(x => x.BookId == id).ToList();
+            
+            // var found = _context.Book.Where(x => x.Id == id).ToList();
+            
+            //if (id == null)
+            //{
+            //    return NotFound();
+            //}
 
-            var book = await _context.Book
-                .Include(b => b.Category)
-                .Include(b => b.Language)
-                .Include(b => b.Publisher)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (book == null)
-            {
-                return NotFound();
-            }
+            //var book = await _context.Book
+            //    .Include(b => b.Category)
+            //    .Include(b => b.Language)
+            //    .Include(b => b.Publisher)
+            //    .FirstOrDefaultAsync(m => m.Id == id);
+            //if (book == null)
+            //{
+            //    return NotFound();
+            //}
 
-            return View(book);
+            return View(bc);
         }
 
         // GET: Book/Create

@@ -1,84 +1,123 @@
-﻿@model KitapKesifleri.Models.Book
-
+﻿@*@model KitapKesifleri.Models.Book*@
+@*@model List<Book>*@
+ 
+@model KitapKesifleri.Models.BookComment
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Detayları</h1>
+<div class="single">
+    <div class="container">
+        <div class="col-md-8 single-main">
+            <div class="single-grid">
+                @foreach (var x in Model.Value1)
+                {
+                    <img src="@x.BookCover" alt="" style="margin-bottom:20px" />
+                    <h2>@x.BookName</h2>
+                }
+            </div>
+            @foreach (var y in Model.Value2)
+            {
 
-<div>
-    <h4>Book</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BookName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BookName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Isbn)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Isbn)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BookCover)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BookCover)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Firstdate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Firstdate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Point)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Point)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Page)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Page)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Summary)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Summary)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Edition)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Edition)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Language)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Language.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Category.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Publisher)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Publisher.Id)
-        </dd>
-    </dl>
+                <ul class="comment-list">
+                    <li>
+                        <div class="desc">
+                            <p>@y.Name:<br /> @y.Comment</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                </ul>}
+            @foreach (var x in Model.Value1)
+            {
+
+                @Html.ActionLink("Yorum Yap", "Yorumyap", "Book", new { id = x.Id })}
+
+                @*<div class="content-form">
+                <h3>Bir Yorum Yapın</h3>
+                <form>
+                    <input type="text" placeholder="İsim" required /><br />
+                    <textarea placeholder="Yorum"></textarea><br />
+                    <input type="submit" value="Gönder" />
+
+                </form>
+            </div>*@
+            </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+@*<div>
+        <h4>Book</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.BookName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.BookName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Isbn)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Isbn)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.BookCover)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.BookCover)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Firstdate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Firstdate)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Point)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Point)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Page)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Page)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Summary)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Summary)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Edition)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Edition)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Language)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Language.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Category)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Category.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Publisher)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Publisher.Id)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>*@

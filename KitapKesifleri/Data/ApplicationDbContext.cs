@@ -7,12 +7,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace KitapKesifleri.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
+        
         public DbSet<Book> Book { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<Language> Language { get; set; }
@@ -22,6 +23,8 @@ namespace KitapKesifleri.Data
         public DbSet<Country> Country { get; set; }
         public DbSet<Publisher> Publisher { get; set; }
         public DbSet<Translator> Translator { get; set; }
-        
+        public DbSet<Comments> Comments { get; set; }
+        public DbSet<ApplicationUser> ApplicationUser { get; set; }
+
     }
 }
