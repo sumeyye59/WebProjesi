@@ -111,13 +111,13 @@ namespace KitapKesifleri.Controllers
                 var files = HttpContext.Request.Form.Files;
 
                 string fileName = Guid.NewGuid().ToString();
-                var uploads = Path.Combine(webRootPath, @"img");
+                var uploads = Path.Combine(webRootPath, @"images");
                 var extension = Path.GetExtension(files[0].FileName);
                 using (var fileStream = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
                 {
                     files[0].CopyTo(fileStream);
                 }
-                book.BookCover = @"\img\" + fileName + extension;
+                book.BookCover = @"\images\" + fileName + extension;
 
                 _context.Add(book);
                 await _context.SaveChangesAsync();

@@ -56,15 +56,16 @@
                             <li class="nav-link">
                                 <partial name="_Culture" />
                             </li>
-                            <li class="nav-item active">
+                            <li class="nav-item ">
                                 <a class="nav-link" asp-area="" asp-controller="ThisYear" asp-action="Index">
                                     Popüler
-                                    <span class="sr-only">(current)</span>
+                                    
                                 </a>
                             </li>
                          
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html">İletişim</a>
+                            <li class="nav-item active">
+                                <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link" >Anasayfa</a>
+                                <span class="sr-only">(current)</span>
                             </li>
                             @if (User.IsInRole("Admin"))
                             {
@@ -94,7 +95,7 @@
                 </div>
             </nav>
         </header>
-    @*<br /><br /><br /><br />*@
+    
         
             <div class="container">
                 <main role="main" class="pb-3">

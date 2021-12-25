@@ -90,11 +90,11 @@ a.filled-button:hover {
 }
 
 .products-heading {
-	background-image: url(../images/products-heading.jpg);
+	background-image: url(../images/book.jpg);
 }
 
 .about-heading {
-	background-image: url(../images/about-heading.jpg);
+	background-image: url(../images/book.jpg);
 }
 
 .contact-heading {
@@ -102,6 +102,7 @@ a.filled-button:hover {
 }
 
 .page-heading {
+	background-image: url(../images/book.jpg);
 	padding: 210px 0px 130px 0px;
 	text-align: center;
 	background-position: center center;

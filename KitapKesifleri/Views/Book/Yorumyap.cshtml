@@ -13,6 +13,10 @@
                 <input type="submit" value="Gönder" class="btn btn-primary" />
             </form>
         </div>*@
+<br />
+<br />
+<br />
+<br />
 <form asp-action="YorumYap">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -25,7 +29,7 @@
         <span asp-validation-for="Comment" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <input type="number" placeholder="ID" asp-for="BookId" value="@ViewBag.deger" required  />
+        <input type="number" placeholder="ID" asp-for="BookId" value="@ViewBag.deger" required />
     </div>
     <div class="form-group">
         <input type="submit" value="Gönder" class="btn btn-primary" />

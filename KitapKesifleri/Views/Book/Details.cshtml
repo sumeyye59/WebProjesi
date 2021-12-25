@@ -1,11 +1,14 @@
 ﻿@*@model KitapKesifleri.Models.Book*@
 @*@model List<Book>*@
- 
+
 @model KitapKesifleri.Models.BookComment
 @{
     ViewData["Title"] = "Details";
 }
-
+<br />
+<br />
+<br />
+<br />
 <h1>Detayları</h1>
 <div class="single">
     <div class="container">
@@ -33,16 +36,16 @@
 
                 @Html.ActionLink("Yorum Yap", "Yorumyap", "Book", new { id = x.Id })}
 
-                @*<div class="content-form">
-                <h3>Bir Yorum Yapın</h3>
-                <form>
-                    <input type="text" placeholder="İsim" required /><br />
-                    <textarea placeholder="Yorum"></textarea><br />
-                    <input type="submit" value="Gönder" />
+            @*<div class="content-form">
+                    <h3>Bir Yorum Yapın</h3>
+                    <form>
+                        <input type="text" placeholder="İsim" required /><br />
+                        <textarea placeholder="Yorum"></textarea><br />
+                        <input type="submit" value="Gönder" />
 
-                </form>
-            </div>*@
-            </div>
+                    </form>
+                </div>*@
+        </div>
     </div>
 </div>
 @*<div>

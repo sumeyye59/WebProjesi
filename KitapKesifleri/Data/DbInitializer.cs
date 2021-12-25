@@ -49,10 +49,11 @@ namespace KitapKesifleri.Data
             {
                 UserName = "g191210037@sakarya.edu.tr",
                 Email = "g191210037@sakarya.edu.tr",
-                MemberName = "Sümeyye",           
+                MemberName = "Sümeyye",
+                Admin="Evet",
                 EmailConfirmed = true,
                 PhoneNumber = "1112223333"
-            }, "Admin123*").GetAwaiter().GetResult();
+            }, "123").GetAwaiter().GetResult();
 
 
             _userManager.AddToRoleAsync(_db.Users.FirstOrDefaultAsync(u => u.Email == "g191210037@sakarya.edu.tr").GetAwaiter().GetResult(), "Admin").GetAwaiter().GetResult();

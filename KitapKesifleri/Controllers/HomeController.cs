@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using KitapKesifleri.Data;
 using KitapKesifleri.Models;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +14,7 @@ namespace KitapKesifleri.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ApplicationDbContext _context;
         private readonly IHtmlLocalizer<HomeController> _localizer;
 
         private readonly ILogger<HomeController> _logger;
@@ -25,6 +27,7 @@ namespace KitapKesifleri.Controllers
 
         public IActionResult Index()
         {
+            
             var test = _localizer["HelloWorld"];
             ViewData["HelloWorld"]=test;
             return View();
