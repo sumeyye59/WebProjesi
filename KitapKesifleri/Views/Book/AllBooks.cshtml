@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<KitapKesifleri.Models.Book>
-
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
 @{
     ViewData["Title"] = "All Books";
 }
@@ -11,8 +11,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="text-content">
-                    <h4>new arrivals</h4>
-                    <h2>sixteen products</h2>
+                    <h4>@localizer["yorum"]</h4>
+                    <h2>@localizer["tum"]</h2>
                 </div>
             </div>
         </div>
@@ -26,10 +26,10 @@
             <div class="col-md-12">
                 <div class="filters">
                     <ul>
-                        <li class="active" data-filter="*">All Products</li>
-                        <li data-filter=".des">Featured</li>
-                        <li data-filter=".dev">Flash Deals</li>
-                        <li data-filter=".gra">Last Minute</li>
+                        <li class="active" data-filter="*">@localizer["kitaplar"]</li>
+                        <li data-filter=".des">@localizer["bilimkurgu"] </li>
+                        <li data-filter=".dev">@localizer["polisiye"] </li>
+                        <li data-filter=".gra">@localizer["kisisel"] </li>
                     </ul>
                 </div>
             </div>
@@ -37,28 +37,47 @@
                 <div class="filters-content">
                     <div class="row grid">
                         @foreach (var x in Model)
-                        {
-                        <div class="col-lg-4 col-md-4 all des">
-                            <div class="product-item">
-                                <a href="/Book/Details/@x.Id"><img src="@x.BookCover" alt=""></a>
-                                <div class="down-content">
-                                    <a href="/Book/Details/@x.Id"><h4>@x.BookName</h4></a>
-                                    <h6>$18.25</h6>
-                                    <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                                    <ul class="stars">
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                    <span>Reviews (12)</span>
+                        {@if (x.CategoryId == 1)
+                            {
+                                <div class="col-lg-4 col-md-4 all des">
+                                    <div class="product-item">
+                                         <a  href="/Book/Details/@x.Id"><img src="@x.BookCover" alt=""></a>
+                                        <div class="down-content">
+                                            <a href="/Book/Details/@x.Id"><h4>@x.BookName</h4></a>
+                                            <h6>İlk basım: <br />@x.Firstdate</h6>
+                                            <p>Özet:@x.Summary</p>
+
+                                        </div>
+                                    </div>
+                                </div>}
+                        @if (x.CategoryId == 2)
+                        {<div class="col-lg-4 col-md-4 all dev">
+                                <div class="product-item">
+                                    <a href="/Book/Details/@x.Id"><img src="@x.BookCover" alt=""></a>
+                                    <div class="down-content">
+                                        <a href="/Book/Details/@x.Id"><h4>@x.BookName</h4></a>
+                                        <h6>İlk basım @x.Firstdate</h6>
+                                        <p>Özet:@x.Summary</p>
+
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        }
+                            </div>}
+                        @if (x.CategoryId == 3)
+                        {<div class="col-lg-4 col-md-4 all gra">
+                                <div class="product-item">
+                                    <a href="/Book/Details/@x.Id"><img src="@x.BookCover" alt=""></a>
+                                    <div class="down-content">
+                                        <a href="/Book/Details/@x.Id"><h4>@x.BookName</h4></a>
+                                        <h6>İlk basım @x.Firstdate</h6>
+                                        <p>Özet:@x.Summary</p>
+
+                                    </div>
+                                </div>
+                            </div>}
+                    }
+                    </div>
                 </div>
-            </div></div>
+            </div>
             <div class="col-md-12">
                 <ul class="pages">
                     <li><a href="#">1</a></li>

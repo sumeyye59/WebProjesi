@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="bulwer" xml:space="preserve">
+    <value>A good book is a real treasure</value>
+  </data>
+  <data name="franklin" xml:space="preserve">
+    <value>Books are the lights that guide civilization</value>
+  </data>
   <data name="HelloWorld" xml:space="preserve">
     <value>Hello World</value>
+  </data>
+  <data name="j." xml:space="preserve">
+    <value>Books are children of the brain</value>
+  </data>
+  <data name="TumKitaplar" xml:space="preserve">
+    <value>All Books</value>
   </data>
 </root>

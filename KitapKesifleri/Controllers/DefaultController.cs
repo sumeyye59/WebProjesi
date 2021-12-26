@@ -12,13 +12,10 @@ namespace KitapKesifleri.Controllers
         private readonly ApplicationDbContext _context;
         public IActionResult Index()
         {
-            
-            return View();
-        }
-        public PartialViewResult Partial()
-        {
             var values = _context.Book.Take(3).OrderByDescending(x => x.Firstdate).ToList();
-            return PartialView(values);
+            return View(values);
+            
         }
+        
     }
 }

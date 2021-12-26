@@ -92,9 +92,9 @@ namespace KitapKesifleri.Controllers
         // GET: Book/Create
         public IActionResult Create()
         {
-            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Id");
-            ViewData["LanguageId"] = new SelectList(_context.Language, "Id", "Id");
-            ViewData["PublisherId"] = new SelectList(_context.Publisher, "Id", "Id");
+            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "CategoryName");
+            ViewData["LanguageId"] = new SelectList(_context.Language, "Id", "LanguageName");
+            ViewData["PublisherId"] = new SelectList(_context.Publisher, "Id", "PublisherName");
             return View();
         }
 

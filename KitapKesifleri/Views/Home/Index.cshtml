@@ -1,5 +1,4 @@
 ﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
-@@*model IEnumerable<KitapKesifleri.Models.Book>*@
 
 @{
     ViewData["Title"] = "Home Page";
@@ -12,28 +11,28 @@
 
             <div class="text-content">
 
-                <h4>Best Offer</h4>
-                <h2>New Arrivals On Sale</h2>
+                <h4>@localizer["bulwer"]</h4>
+                <h2>Bulwer Lytton</h2>
             </div>
         </div>
         <div class="banner-item-02">
 
             <div class="text-content">
 
-                <h4>Flash Deals</h4>
-                <h2>Get your best products</h2>
+                <h4>@localizer["franklin"]</h4>
+                <h2>Franklin D. Rooselvet</h2>
             </div>
         </div>
         <div class="banner-item-03">
 
             <div class="text-content">
-                <h4>Last Minute</h4>
-                <h2>Grab last minute deals</h2>
+                <h4>@localizer["j."]</h4>
+                <h2>J. Swift</h2>
             </div>
         </div>
     </div>
 </div>
-<h2 class="display-4">@localizer["HelloWorld"]</h2>
+@*<h2 class="display-4">@localizer["HelloWorld"]</h2>*@
 @*<h2 class="display-4">@ViewData["HelloWorld"]</h2>*@
 
 <div class="latest-products">
@@ -41,29 +40,21 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-heading">
-                    <h2>En Yeniler</h2>
-                    <a asp-controller="Book" asp-action="AllBooks">Tüm Kitaplar <i class="fa fa-angle-right"></i></a>
+                    @*<h2>En Yeniler</h2>*@
+                    <a asp-controller="Book" asp-action="AllBooks">@localizer["TumKitaplar"] <i class="fa fa-angle-right"></i></a>
                 </div>
             </div>
-         
-                <div class="col-md-4">
+           
+                @*<div class="col-md-4">
                     <div class="product-item">
-                        <a href="#"><img src="assets/images/product_01.jpg" alt=""></a>
+                        <a href="#"><img src="" alt=""></a>
                         <div class="down-content">
-                            <a href="#"><h4>@x.BookName</h4></a>
-                            <h6>$25.75</h6>
-                            <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                            <span>Reviews (24)</span>
+                            <h4> </h4>
+                            <h6>Puan:</h6>
+
                         </div>
                     </div>
-                </div>
-            </div>
+                </div>*@
+        </div>
     </div>
 </div>

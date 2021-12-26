@@ -1,4 +1,5 @@
-﻿@model IEnumerable<KitapKesifleri.Controllers.bookDTO>
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@model IEnumerable<KitapKesifleri.Controllers.bookDTO>
 
 @{ ViewData["Title"] = "Index"; }
 <div class="page-heading about-heading header-text">
@@ -6,8 +7,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="text-content">
-                    <h4>Puanı Yüksek Olanlar</h4>
-                    <h2>our company</h2>
+                    <h4>@localizer["puan"]</h4>
+                    <h2>@localizer["puan2"]</h2>
                 </div>
             </div>
         </div>
@@ -19,33 +20,36 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-heading">
-                        <h2>Kitaplar</h2>
+                        <h2>@localizer["Kitaplar"]</h2>
                     </div>
-                </div></div></div></div>
-                @foreach (var item in Model)
-                {
+                </div>
+            </div>
+        </div>
+    </div>
+    @foreach (var item in Model)
+    {
 
-                    <div class="col-md-4">
-                        <div class="team-member">
-                            <div class="thumb-container">
-                                <img src="@item.BookCover" class="d-block w-100 h-100" />
-                                <div class="hover-effect">
-                                    <div class="hover-content">
-                                        <ul class="social-icons">
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <div class="col-md-4">
+            <div class="team-member">
+                <div class="thumb-container">
+                    <img src="@item.BookCover" class="d-block w-100 h-100" />
+                    <div class="hover-effect">
+                        <div class="hover-content">
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
 
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="down-content">
-                                <h4>@item.BookName</h4>
-                                <span>@item.Point</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
-                            </div>
+                            </ul>
                         </div>
                     </div>
-                  
-                }
+                </div>
+                <div class="down-content">
+                    <h4>@item.BookName</h4>
+                    <span>@item.Point</span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing itaque corporis nulla.</p>
+                </div>
             </div>
+        </div>
+
+    }
+</div>
             }

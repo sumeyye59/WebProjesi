@@ -9,16 +9,27 @@
 <br />
 <br />
 <br />
-<h1>Detayları</h1>
+<style>
+    .boyutlandirma img {
+        max-width: 300px;
+        height: auto;
+    }
+</style>
+<h2 style="color:red">Yorumlar</h2>
+<br />
 <div class="single">
     <div class="container">
         <div class="col-md-8 single-main">
             <div class="single-grid">
                 @foreach (var x in Model.Value1)
                 {
-                    <img src="@x.BookCover" alt="" style="margin-bottom:20px" />
+                    <div class="boyutlandirma">
+                        <img src="@x.BookCover" alt="" style="margin-bottom:20px" />
+                    </div>
                     <h2>@x.BookName</h2>
+
                 }
+
             </div>
             @foreach (var y in Model.Value2)
             {
@@ -26,25 +37,19 @@
                 <ul class="comment-list">
                     <li>
                         <div class="desc">
-                            <p>@y.Name:<br /> @y.Comment</p>
+                            <span style="background-color: yellow;">@y.Name:</span> <span>@y.Comment</span>
                         </div>
                         <div class="clearfix"></div>
                     </li>
                 </ul>}
-            @foreach (var x in Model.Value1)
+            @if (User.Identity.IsAuthenticated)
             {
+                @foreach (var x in Model.Value1)
+                {
 
-                @Html.ActionLink("Yorum Yap", "Yorumyap", "Book", new { id = x.Id })}
+                    @Html.ActionLink("Yorum Yap", "Yorumyap", "Book", new { id = x.Id })}
 
-            @*<div class="content-form">
-                    <h3>Bir Yorum Yapın</h3>
-                    <form>
-                        <input type="text" placeholder="İsim" required /><br />
-                        <textarea placeholder="Yorum"></textarea><br />
-                        <input type="submit" value="Gönder" />
-
-                    </form>
-                </div>*@
+            }
         </div>
     </div>
 </div>

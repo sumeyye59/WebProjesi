@@ -220,3 +220,11 @@ C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\tr\KitapKesifleri.resou
 C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\KitapKesifleri.Resources.Controllers.HomeController.en.resources
 C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\KitapKesifleri.Resources.Controllers.HomeController.tr.resources
 C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\Razor\Views\Shared\_Culture.cshtml.g.cs
+C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\KitapKesifleri.Resources.Views.ThisYear.Index.en.resources
+C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\KitapKesifleri.Resources.Views.ThisYear.Index.tr.resources
+C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\KitapKesifleri.Resources.Views.Shared._Layout.en.resources
+C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\KitapKesifleri.Resources.Views.Shared._Layout.tr.resources
+C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\KitapKesifleri.Resources.Views.Shared._LoginPartial.en.resources
+C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\KitapKesifleri.Resources.Views.Shared._LoginPartial.tr.resources
+C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\KitapKesifleri.Resources.Views.Book.AllBooks.en.resources
+C:\WebProg\WebProjesiguz\KitapKesifleri\obj\Debug\net5.0\KitapKesifleri.Resources.Views.Book.AllBooks.tr.resources

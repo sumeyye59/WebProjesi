@@ -8,6 +8,7 @@ using KitapKesifleri.Models;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Localization;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace KitapKesifleri.Controllers
@@ -24,13 +25,14 @@ namespace KitapKesifleri.Controllers
             _localizer = localizer;
             _logger = logger;
         }
-
+      
         public IActionResult Index()
         {
-            
+
             var test = _localizer["HelloWorld"];
-            ViewData["HelloWorld"]=test;
+            ViewData["HelloWorld"] = test;
             return View();
+           
         }
 
         public IActionResult Privacy()

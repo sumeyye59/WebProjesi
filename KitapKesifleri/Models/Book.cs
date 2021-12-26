@@ -25,8 +25,11 @@ namespace KitapKesifleri.Models
         [Display(Name = "Puanı")]
         //[StringLength(2, ErrorMessage = "0-10 arası sayı girin.", MinimumLength = 1)]
         public double? Point { get; set; }
+        [Display(Name = "Sayfa sayısı")]
         public int? Page { get; set; }
-        public string Summary { get; set; } 
+        [Display(Name = "Özet")]
+        public string Summary { get; set; }
+        [Display(Name = "Baskı")]
         public int Edition { get; set; }
         public int? LanguageId { get; set; }
         public Language Language { get; set; }
